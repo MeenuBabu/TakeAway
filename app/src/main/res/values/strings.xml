@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TakeAway</string>
+    <string name="restaurant_name">restaurant name</string>
+    <string name="opening_state">opening state</string>
+    <string name="sort_value">Sort value: %s</string>
+    <string name="no_results_found">No Results Found</string>
+    <string name="search_restaurants">Search restaurants</string>
+    <string name="restaurant_not_found">Restaurant not found</string>
+    <string name="sort_by">Sort by</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.RestaurantActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/restaurant_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/activity_main_toolbar"
+            layout="@layout/activity_restaurant_toolbar" />
+
+        <include
+            android:id="@+id/activity_main_search_bar"
+            layout="@layout/activity_restaurant_search_bar" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/spinner_options"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/restaurant_toolbar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sort_by"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_filter"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_filter"
+        app:layout_constraintTop_toBottomOf="@id/restaurant_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_restaurants"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_filter"
+        tools:listitem="@layout/item_list_restaurant" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_not_found"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/no_results_found"
+        android:textSize="@dimen/_18ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_filter"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
